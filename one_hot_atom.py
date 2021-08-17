@@ -8,7 +8,6 @@ from Bio.PDB import *
 import numpy as np
 from sklearn.preprocessing import OneHotEncoder
 import glob
-from biopandas.pdb import PandasPdb
 def atom1(structure):
     atomslist=np.array(sorted(np.array(['C', 'CA', 'CB', 'CG', 'CH2', 'N','NH2',  'OG','OH', 'O1', 'O2', 'SE','1']))).reshape(-1,1)
     enc = OneHotEncoder(handle_unknown='ignore')
