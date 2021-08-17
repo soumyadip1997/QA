@@ -12,7 +12,6 @@ from sklearn.preprocessing import OneHotEncoder
 import glob
 from Bio.PDB import *
 
-from biopandas.pdb import PandasPdb
 
 def res1(structure):
     residuelist=np.array(sorted(np.array(['ALA', 'ARG', 'ASN', 'ASP', 'GLN', 'GLU', 'GLY', 'ILE', 'LEU', 'LYS', 'MET', 'PHE', 'PRO', 'SER', 'THR', 'TRP', 'TYR', 'VAL', 'CYS', 'HIS','1']))).reshape(-1,1)
