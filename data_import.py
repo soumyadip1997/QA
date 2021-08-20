@@ -1,10 +1,10 @@
 import torch
 import glob
 import pandas as pd
-from neigh import neigh1
-from one_hot_atom import atom1
+from QA.neigh import neigh1
+from QA.one_hot_atom import atom1
 import numpy as np
-from one_hot_res import res1
+from QA.one_hot_res import res1
 from torch.utils.data import Dataset
 from torch.utils.data import sampler
 
