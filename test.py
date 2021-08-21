@@ -2,7 +2,7 @@ import torch.optim as optim
 import torch.nn as nn
 
 from QA.data_import import get_dataloader,data1
-from QA.temp_network import GNN
+#from QA.temp_network import GNN
 import torch
 def test(GNN,get_dataloader,saved_model):
     model=GNN
