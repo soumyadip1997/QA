@@ -5,6 +5,7 @@ from QA.data_import import get_dataloader,data1
 import matplotlib.pyplot as plt
 #from QA.temp_network import GNN
 import torch
+import numpy as np
 def test(GNN,get_dataloader,saved_model):
     model=GNN
     use_cuda = torch.cuda.is_available()
