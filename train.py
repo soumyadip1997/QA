@@ -23,7 +23,7 @@ def train(GNN,dataloader):
             one_hot_atom,one_hot_res,neigh_same_res,neigh_diff_res,target=batch
             for p in range(len(batch[0])):
             
-              result=model([one_hot_atom[p].to(device),one_hot_res[p].to(device),neigh_same_res[p].to(device),neigh_diff_res[p].to(device)])
+              result=model([one_hot_atom[p].to(device),one_hot_res[p].to(device),neigh_same_res[p].long().to(device),neigh_diff_res[p].long().to(device)])
               mini_batch.append(result)
               
             output = torch.stack(mini_batch)
