@@ -93,8 +93,8 @@ def collate_fn_padd(batch):
             #print('Inside')
             #print(batch[i][8])
             if batch[i][8]==0:
-                one_hot_atom.append(batch[i][3])
-                one_hot_res.append(torch.tensor(batch[i][4]))
+                one_hot_atom.append(torch.tensor(batch[i][3],dtype=torch.float32))
+                one_hot_res.append(torch.tensor(batch[i][4],dtype=torch.float32))
                 neigh_same_res.append(torch.tensor(batch[i][5]))
                 neigh_diff_res.append(torch.tensor(batch[i][6]))
                 '''one_hot_atom[i][:len(batch[i][3])]=torch.tensor(batch[i][3])
