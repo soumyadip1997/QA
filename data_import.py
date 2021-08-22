@@ -78,10 +78,14 @@ def collate_fn_padd(batch):
     '''
     batch_size=len(batch)
     max_atoms=max([p2[0] for p2 in batch]) 
-    one_hot_atom=torch.zeros(batch_size,max_atoms,batch[0][1])
+    '''one_hot_atom=torch.zeros(batch_size,max_atoms,batch[0][1])
     one_hot_res=torch.zeros(batch_size,max_atoms,batch[0][2])
     neigh_same_res=torch.zeros(batch_size,max_atoms,10).fill_(-1)
-    neigh_diff_res=torch.zeros(batch_size,max_atoms,10).fill_(-1)
+    neigh_diff_res=torch.zeros(batch_size,max_atoms,10).fill_(-1)'''
+    one_hot_atom=[]
+    one_hot_res=[]
+    neigh_same_res=[]
+    neigh_diff_res=[]
     flag=torch.zeros((batch_size))
   
     gdt_ts=torch.zeros((batch_size))
@@ -89,10 +93,14 @@ def collate_fn_padd(batch):
             #print('Inside')
             #print(batch[i][8])
             if batch[i][8]==0:
-                one_hot_atom[i][:len(batch[i][3])]=torch.tensor(batch[i][3])
+                one_hot_atom.append(batch[i][3])
+                one_hot_res.append(torch.tensor(batch[i][4]))
+                neigh_same_res.append(torch.tensor(batch[i][5]))
+                neigh_diff_res.append(torch.tensor(batch[i][6]))
+                '''one_hot_atom[i][:len(batch[i][3])]=torch.tensor(batch[i][3])
                 one_hot_res[i][:len(batch[i][4])]=torch.tensor(batch[i][4])
                 neigh_same_res[i][:len(batch[i][5])]=torch.tensor(batch[i][5])
-                neigh_diff_res[i][:len(batch[i][6])]=torch.tensor(batch[i][6])
+                neigh_diff_res[i][:len(batch[i][6])]=torch.tensor(batch[i][6])'''
                   
               
                 gdt_ts[i]=((batch[i][7]))
