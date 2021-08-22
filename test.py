@@ -27,7 +27,7 @@ def test(GNN,get_dataloader,saved_model):
             mini_batch=[]
             for p in range(len(batch[0])):
             
-              result=model([one_hot_atom[p].to(device),one_hot_res[p].to(device),neigh_same_res[p].to(device),neigh_diff_res[p].to(device)])
+              result=model([one_hot_atom[p].to(device),one_hot_res[p].to(device),neigh_same_res[p].to(device).long(),neigh_diff_res[p].to(device).long()])
               mini_batch.append(result)
 
               # explain the flatten 
