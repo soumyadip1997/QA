@@ -34,8 +34,9 @@ def train(GNN,dataloader):
             loss_per_epoch+=Loss.item()
           
         loss_list.append(loss_per_epoch)
+        
         print(f'Loss for epoch ={epoch} is {loss_per_epoch}')
     torch.save(model.state_dict(),'modelGCNL2_Global_Basic1.ckpt')
-    plt.plot(loss_list)
+    plt.plot([(p+1) for p in range(len(loss_list))],loss_list)
     plt.xlabel("Epoch")
     plt.ylabel("Loss")
