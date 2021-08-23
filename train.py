@@ -14,7 +14,7 @@ def train(GNN,dataloader):
     loss=nn.MSELoss()
     loss_list=[]
     
-    for epoch in range(2):
+    for epoch in range(5):
         loss_per_epoch=0
         print(epoch)
         for i,batch in enumerate(dataloader):
